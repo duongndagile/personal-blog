@@ -1,0 +1,41 @@
+@import "../../../../styles/color.scss";
+
+.button {
+  height: initial;
+  min-height: initial;
+  border-radius: 10px;
+  transition: all 0.3s;
+  box-shadow: none;
+  padding: 6px;
+  font-size: 12px;
+  &::after {
+    display: none;
+  }
+
+  span {
+    transition: all 0.3s;
+  }
+}
+
+.primary {
+  background-color: $secondary-5;
+  border: none;
+  &:hover,
+  &:focus {
+    background-color: $secondary-6;
+  }
+}
+
+.secondary {
+  background: $white;
+  border: 1px solid $primary-1;
+  color: $primary-1;
+  &:hover,
+  &:focus {
+    background: $gray-5;
+    border-color: $primary-1;
+    span:nth-child(2) {
+      color: $white;
+    }
+  }
+}

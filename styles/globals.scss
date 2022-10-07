@@ -1,0 +1,39 @@
+@import "./font.scss";
+
+:root {
+  --maxWidthContent: 1120px;
+}
+
+*,
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Gilroy";
+  font-size: 14px;
+  box-sizing: border-box;
+  line-height: normal;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+  body {
+    color: white;
+    background: black;
+  }
+}
+
+main {
+  min-height: calc(100vh - 506px);
+
+  @media (max-width: 768px) {
+    min-height: initial;
+  }
+}
