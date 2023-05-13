@@ -2,6 +2,22 @@
 
 :root {
   --maxWidthContent: 1120px;
+  --primary-color: #0f0e17;
+  --sub-color: #2e2f3e;
+
+  --primary-bg: #fffffe;
+  --color-hover: #f25f4c;
+
+  --primary-font: "Open Sans";
+  --secondary-font: "sans-serif";
+  --wrapper: 192rem;
+  --container: 117rem;
+}
+
+[data-theme="dark"] {
+  --primary-color: #fffffe;
+  --sub-color: #a7a9be;
+  --primary-bg: #0f0e17f0;
 }
 
 *,
@@ -25,8 +41,8 @@ a {
     color-scheme: dark;
   }
   body {
-    color: white;
-    background: black;
+    color: var(--primary-color);
+    background: var(--primary-bg);
   }
 }
 

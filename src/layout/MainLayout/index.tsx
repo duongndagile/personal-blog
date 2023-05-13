@@ -1,6 +1,8 @@
 import dynamic from "next/dynamic";
 
-const MainHeader = dynamic(() => import("../components/MainHeader"));
+const MainHeader = dynamic(() => import("../components/MainHeader"), {
+  ssr: false,
+});
 const Footer = dynamic(() => import("../components/Footer"));
 
 import styles from "./index.module.scss";

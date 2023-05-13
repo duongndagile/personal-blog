@@ -1,5 +1,3 @@
-@import "../../../../styles/color.scss";
-
 .button {
   height: initial;
   min-height: initial;
@@ -18,24 +16,23 @@
 }
 
 .primary {
-  background-color: $secondary-5;
+  background-color: var(--primary-color);
+  color: var(--primary-bg);
   border: none;
-  &:hover,
-  &:focus {
-    background-color: $secondary-6;
+  &:hover {
+    background-color: var(--color-hover);
   }
 }
 
 .secondary {
-  background: $white;
-  border: 1px solid $primary-1;
-  color: $primary-1;
-  &:hover,
-  &:focus {
-    background: $gray-5;
-    border-color: $primary-1;
+  background: var(--primary-bg);
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+  &:hover {
+    background: var(--color-hover);
+    border-color: var(--color-hover);
     span:nth-child(2) {
-      color: $white;
+      color: var(--primary-color);
     }
   }
 }

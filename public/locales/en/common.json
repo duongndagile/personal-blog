@@ -1,0 +1,15 @@
+{
+    "title_page": "Duong's Blog",
+    "home_page": "Home Page",
+    "about_me": "About Me",
+    "project": "Project",
+    "contact": "Contact",
+    "label_button_change_mode": "Change Mode",
+    "label_button_change_language": "Change to Vietnamese",
+    "label_button_logout": "Logout",
+    "label_button_login": "Login",
+    "title_login": "Login",
+    "button_login": "Login",
+    "notification_successfully": "Login successfully",
+    "notification_failure": "Login failure"
+}

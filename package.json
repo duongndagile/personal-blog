@@ -9,13 +9,22 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@googlemaps/js-api-loader": "^1.15.1",
+    "ahooks": "^3.7.7",
+    "antd": "^5.4.7",
     "classnames": "^2.3.2",
+    "cookies-next": "^2.1.1",
+    "dayjs": "^1.11.7",
+    "google-maps": "^4.3.3",
     "next": "12.3.1",
+    "next-i18next": "^11.0.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "sass": "^1.55.0"
+    "sass": "^1.55.0",
+    "umi-request": "^1.4.0"
   },
   "devDependencies": {
+    "@types/google.maps": "^3.53.1",
     "@types/node": "18.8.3",
     "@types/react": "18.0.21",
     "@types/react-dom": "18.0.6",

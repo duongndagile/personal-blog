@@ -1,0 +1,15 @@
+{
+    "title_page": "Blog của Dương",
+    "home_page": "Trang chủ",
+    "about_me": "Về tôi",
+    "project": "Dự án",
+    "contact": "Liên hệ",
+    "label_button_change_mode": "Đổi giao diện",
+    "label_button_change_language": "Chuyển sang Tiếng Anh",
+    "title_login": "Đăng nhập",
+    "button_login": "Đăng nhập",
+    "label_button_logout": "Đăng xuất",
+    "label_button_login": "Đăng nhập",
+    "notification_successfully": "Đăng nhập thành công",
+    "notification_failure": "Đăng nhập thất bại"
+}

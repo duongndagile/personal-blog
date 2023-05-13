@@ -1,9 +1,14 @@
-@import "../../../../styles/color.scss";
+// @import "../../../../styles/settings.scss";
 .header {
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 10px 0;
+  .logo {
+    font-size: 18px;
+    font-weight: 700;
+  }
   .linkList {
     width: 40%;
     display: flex;
