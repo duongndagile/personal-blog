@@ -4,7 +4,6 @@ import styles from "./index.module.scss";
 import { ENV } from "../../../constant/env";
 
 function circlePath(center: any, radius: number, points: number) {
-  console.log(google.maps.geometry);
   var a = [],
     p = 360 / points,
     d = 0;
@@ -13,6 +12,9 @@ function circlePath(center: any, radius: number, points: number) {
   }
   return a;
 }
+
+const DISTANT = 5000;
+const DEG = 360;
 
 const MapComponent = () => {
   useEffect(() => {
@@ -44,15 +46,16 @@ const MapComponent = () => {
         const marker = new google.maps.Marker({
           position: myLatLng,
           map,
-          title: "Click to zoom XXX",
         });
 
-        const circle = new google.maps.Polygon({
+        const polygon = new google.maps.Polygon({
           map,
-          paths: circlePath(map.getCenter(), 5000, 360),
+          paths: circlePath(map.getCenter(), DISTANT, DEG),
+          clickable: true,
         });
 
         map.addListener("click", ({ latLng: { lat, lng } }: any) => {
+          polygon.setVisible(false);
           const position = {
             lat: lat(),
             lng: lng(),
@@ -61,8 +64,22 @@ const MapComponent = () => {
 
           window.setTimeout(() => {
             map.panTo(marker.getPosition() as google.maps.LatLng);
-            circle.setPaths(circlePath(map.getCenter(), 5000, 360));
+            polygon.setPaths(circlePath(map.getCenter(), DISTANT, DEG));
+            polygon.setVisible(true);
           }, 300);
+        });
+        polygon.addListener("click", ({ latLng: { lat, lng } }: any) => {
+          polygon.setVisible(false);
+          const position = {
+            lat: lat(),
+            lng: lng(),
+          };
+          marker.setPosition(position);
+          window.setTimeout(() => {
+            map.panTo(marker.getPosition() as google.maps.LatLng);
+            polygon.setPaths(circlePath(map.getCenter(), DISTANT, DEG));
+            polygon.setVisible(true);
+          }, 800);
         });
       })();
     }
