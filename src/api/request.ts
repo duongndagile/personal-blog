@@ -60,11 +60,11 @@ const TokenManager = new TokenManagement({
 
       const decoded = parseJwt(token);
       const { exp } = decoded;
-      console.log("isValidToken");
       // const currentTime = Date.now() / 1000;
       const currentTimeNextDay = dayjs().add(1, "day").unix() - 65;
 
       if (exp - 30 > currentTimeNextDay) {
+        console.log("isValidToken");
         return true;
       }
 
@@ -74,6 +74,7 @@ const TokenManager = new TokenManagement({
     }
   },
   getAccessToken: () => {
+    console.log("getAccessToken");
     return getAccessToken() as string;
   },
   onRefreshToken(done) {

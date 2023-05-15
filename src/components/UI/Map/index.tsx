@@ -14,7 +14,7 @@ function circlePath(center: any, radius: number, points: number) {
 }
 
 const DISTANT = 5000;
-const DEG = 360;
+const POINTS = 360;
 
 const MapComponent = () => {
   useEffect(() => {
@@ -50,7 +50,7 @@ const MapComponent = () => {
 
         const polygon = new google.maps.Polygon({
           map,
-          paths: circlePath(map.getCenter(), DISTANT, DEG),
+          paths: circlePath(map.getCenter(), DISTANT, POINTS),
           clickable: true,
         });
 
@@ -64,9 +64,9 @@ const MapComponent = () => {
 
           window.setTimeout(() => {
             map.panTo(marker.getPosition() as google.maps.LatLng);
-            polygon.setPaths(circlePath(map.getCenter(), DISTANT, DEG));
+            polygon.setPaths(circlePath(map.getCenter(), DISTANT, POINTS));
             polygon.setVisible(true);
-          }, 300);
+          }, 800);
         });
         polygon.addListener("click", ({ latLng: { lat, lng } }: any) => {
           polygon.setVisible(false);
@@ -77,7 +77,7 @@ const MapComponent = () => {
           marker.setPosition(position);
           window.setTimeout(() => {
             map.panTo(marker.getPosition() as google.maps.LatLng);
-            polygon.setPaths(circlePath(map.getCenter(), DISTANT, DEG));
+            polygon.setPaths(circlePath(map.getCenter(), DISTANT, POINTS));
             polygon.setVisible(true);
           }, 800);
         });
