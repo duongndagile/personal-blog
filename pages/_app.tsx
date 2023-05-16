@@ -34,7 +34,7 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
 
   useEffect(() => {
     setDayJsLocale(router.locale as string);
-  }, []);
+  }, [router.locale]);
 
   const getLayout = Component.getLayout
     ? Component.getLayout
